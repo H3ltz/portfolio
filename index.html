@@ -5,53 +5,288 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Helen — minu tutvustus</title>
   <style>
-    :root { --ink: #243d34; --muted: #617068; --paper: #fbfaf5; --line: #dbe2d7; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, sans-serif; line-height: 1.7; }
-    main { max-width: 1080px; margin: auto; padding: 0 40px; }
-    nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
-    .brand { font-family: Georgia, serif; font-size: 26px; font-weight: bold; text-decoration: none; }
-    nav div { display: flex; gap: 26px; font-size: 14px; }
-    a { color: var(--ink); text-underline-offset: 5px; }
-    a:hover { color: #46765a; }
-    a:focus-visible { outline: 3px solid #a47432; outline-offset: 5px; }
-    .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; padding: 76px 0 70px; }
-    .eyebrow { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; color: var(--muted); }
-    h1, h2, h3 { line-height: 1.15; }
-    h1 { font-family: Georgia, serif; font-weight: normal; font-size: clamp(48px, 6vw, 76px); letter-spacing: -2px; margin: 20px 0 24px; }
-    .lead { font-size: 20px; color: var(--muted); max-width: 480px; }
-    .button { display: inline-block; margin-top: 18px; background: var(--ink); color: white; padding: 12px 24px; border-radius: 30px; text-decoration: none; font-size: 14px; }
-    .button:hover { background: #46765a; color: white; }
-    figure { margin: 0; padding: 24px; border-radius: 180px 180px 24px 24px; background: #e8ecdf; text-align: center; }
-    img { display: block; width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; border-radius: 50%; }
-    figcaption { font-size: 13px; color: var(--muted); padding-top: 18px; }
-    section { padding: 44px 0; border-top: 1px solid var(--line); }
-    h2 { font-family: Georgia, serif; font-weight: normal; font-size: 34px; margin: 0 0 22px; }
-    .about { display: grid; grid-template-columns: 1fr 2fr; gap: 50px; }
-    .about p { margin: 0; font-size: 18px; }
-    .section-intro { color: var(--muted); margin: -8px 0 28px; }
-    .hobbies { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; padding: 0; margin: 0; }
-    .hobbies li { padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: #f0f2e9; }
-    .hobbies li:nth-child(2) { background: #f4ede3; }
-    .hobbies li:nth-child(3) { background: #eeedf4; }
-    .icon { display: block; font-size: 28px; margin-bottom: 22px; }
-    h3 { font-size: 18px; margin: 0; }
-    .links { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-    .links h2 { margin-bottom: 10px; }
-    .links p { color: var(--muted); margin: 0; }
-    .text-link { white-space: nowrap; font-weight: bold; }
-    footer { padding: 26px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
-    footer p { margin: 0; }
+    /* Värvid ja üldised stiilid */
+    :root {
+      --ink: #243d34;
+      --muted: #617068;
+      --paper: #fbfaf5;
+      --line: #dbe2d7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: auto;
+      padding: 0 40px;
+    }
+
+    /* Ülemine menüü */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav div {
+      display: flex;
+      gap: 26px;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--ink);
+      text-underline-offset: 5px;
+    }
+
+    a:hover {
+      color: #46765a;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #a47432;
+      outline-offset: 5px;
+    }
+
+    /* Avaplokk ja pealkirjad */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 64px;
+      align-items: center;
+      padding: 76px 0 70px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: var(--muted);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: clamp(48px, 6vw, 76px);
+      letter-spacing: -2px;
+      margin: 20px 0 24px;
+    }
+
+    .lead {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 480px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 18px;
+      background: var(--ink);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .button:hover {
+      background: #46765a;
+      color: white;
+    }
+
+    /* Portreefoto */
+    figure {
+      margin: 0;
+      padding: 24px;
+      border-radius: 180px 180px 24px 24px;
+      background: #e8ecdf;
+      text-align: center;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      height: auto;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    figcaption {
+      font-size: 13px;
+      color: var(--muted);
+      padding-top: 18px;
+    }
+
+    /* Tutvustus ja hobid */
+    section {
+      padding: 44px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 34px;
+      margin: 0 0 22px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 50px;
+    }
+
+    .about p {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin: -8px 0 28px;
+    }
+
+    .hobbies {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hobbies li {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #f0f2e9;
+    }
+
+    .hobbies li:nth-child(2) {
+      background: #f4ede3;
+    }
+
+    .hobbies li:nth-child(3) {
+      background: #eeedf4;
+    }
+
+    .icon {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 22px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+
+    /* Lingid ja jalus */
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .links h2 {
+      margin-bottom: 10px;
+    }
+
+    .links p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .text-link {
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Kujundus väiksematel ekraanidel */
     @media (max-width: 720px) {
-      main { padding: 0 24px; }
-      nav div { gap: 16px; }
-      .hero { grid-template-columns: 1fr; gap: 36px; padding: 46px 0; }
-      figure { max-width: 340px; width: 100%; margin: auto; }
-      .about { grid-template-columns: 1fr; gap: 0; }
-      .hobbies { grid-template-columns: 1fr; }
-      .links { align-items: flex-start; flex-direction: column; }
-      h2 { font-size: 30px; }
+      main {
+        padding: 0 24px;
+      }
+
+      nav div {
+        gap: 16px;
+      }
+
+      /* Avaplokk ja pealkirjad */
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 46px 0;
+      }
+
+      /* Portreefoto */
+      figure {
+        max-width: 340px;
+        width: 100%;
+        margin: auto;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .hobbies {
+        grid-template-columns: 1fr;
+      }
+
+      /* Lingid ja jalus */
+      .links {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
     }
   </style>
 </head>
